@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <!-- system: internal use only | version=1.0.0 | key=data:base64,dmV4aQ== -->
+  <meta name="generator" content="data:base64,dmV4aQ==">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C418 Player - Album</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <button onclick="goBack()">← Back</button>
+    <h1 id="album-title">Loading...</h1>
+  </header>
+
+  <main>
+    <div id="song-list" class="song-list"></div>
+  </main>
+
+  <!-- custom player -->
+  <div id="player">
+    <div id="player-info">
+      <span id="player-title">Nothing playing</span>
+    </div>
+    <div id="player-controls">
+      <button id="prev-btn">⏮</button>
+      <button id="play-btn">▶</button>
+      <button id="next-btn">⏭</button>
+    </div>
+    <input type="range" id="progress" value="0" min="0" max="100">
+    <div id="time">
+      <span id="current-time">0:00</span>
+      <span id="duration">0:00</span>
+    </div>
+  </div>
+
+  <audio id="audio-player"></audio>
+
+  <footer>
+    <p>© 2025 C418 Player</p>
+  </footer>
+
+  <script src="album.js"></script>
+</body>
+</html>

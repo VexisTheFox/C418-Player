@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- system: internal use only | version=1.0.0 | key=data:base64,dmV4aQ== -->
+  <meta name="generator" content="data:base64,dmV4aQ==">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C418 Player</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>C418 Player</h1>
+  </header>
+
+  <main>
+    <section id="top-picks">
+      <h2>Top Picks</h2>
+      <div id="top-picks-list" class="song-list"></div>
+    </section>
+
+    <section id="albums">
+      <h2>Albums</h2>
+      <div class="album-grid">
+        <div class="album" onclick="openAlbum('album1')">
+          <img src="https://i.scdn.co/image/ab67616d0000b273aaeb5c9fb6131977995b7f0e" alt="Volume Alpha">
+          <h3>Volume Alpha</h3>
+          <p>25 Songs</p>
+        </div>
+        <div class="album" onclick="openAlbum('album2')">
+          <img src="https://i.scdn.co/image/ab67616d0000b2734cf0b29eb06a92aa96acae64" alt="Volume Beta">
+          <h3>Volume Beta</h3>
+          <p>30 Songs</p>
+        </div>
+      </div>
+    </section>
+  <!-- Custom player -->
+  <div id="player">
+    <div id="player-info">
+      <span id="player-title">Nothing playing</span>
+    </div>
+    <div id="player-controls">
+      <button id="prev-btn">⏮</button>
+      <button id="play-btn">▶</button>
+      <button id="next-btn">⏭</button>
+    </div>
+    <input type="range" id="progress" value="0" min="0" max="100">
+    <div id="time">
+      <span id="current-time">0:00</span>
+      <span id="duration">0:00</span>
+    </div>
+  </div>
+
+  <audio id="audio-player"></audio>
+
+ <footer>
+  <p>© 2025 C418 Player • <a href="api.html" style="color:#22c55e;">API</a></p>
+ </footer>
+
+
+  <script>
+    function openAlbum(albumId) {
+      window.location.href = `album.html?id=${albumId}`;
+    }
+    function openAPI() {
+      window.location.href = "api.html";
+    }
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

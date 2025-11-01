@@ -1,0 +1,227 @@
+/* ===== Base layout ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #0b0b0b;
+  color: #f2f2f2;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background: #111;
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid #1d1d1d;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #22c55e;
+  letter-spacing: 1px;
+}
+
+main {
+  flex: 1;
+  padding: 1.2rem;
+}
+
+/* ===== Album grid ===== */
+.album-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.album {
+  background: #181818;
+  border-radius: 10px;
+  width: 220px;
+  padding: 0.8rem;
+  text-align: center;
+  transition: transform 0.2s ease, background 0.2s;
+  cursor: pointer;
+}
+.album:hover {
+  background: #1f1f1f;
+  transform: scale(1.03);
+}
+.album img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 0.6rem;
+}
+.album h3 {
+  margin: 0.3rem 0 0.2rem;
+  color: #fff;
+}
+.album p {
+  color: #999;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* ===== Song list ===== */
+.song-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.song {
+  width: 90%;
+  background: #151515;
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  text-align: center;
+  transition: background 0.2s;
+  cursor: pointer;
+}
+.song:hover {
+  background: #22c55e20;
+}
+
+/* ===== Player ===== */
+#player {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  background: #101010;
+  border-top: 1px solid #222;
+  padding: 0.8rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.5);
+  z-index: 20;
+}
+
+#player-info {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+  text-align: center;
+  max-width: 90%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#player-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+#player-controls button {
+  background: #1c1c1c;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 1.2em;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+#player-controls button:hover {
+  background: #22c55e;
+  color: #000;
+  transform: scale(1.05);
+}
+
+#progress {
+  -webkit-appearance: none;
+  width: 90%;
+  height: 6px;
+  border-radius: 5px;
+  background: #333;
+  outline: none;
+  cursor: pointer;
+}
+#progress::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #22c55e;
+  cursor: pointer;
+}
+#progress::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #22c55e;
+  cursor: pointer;
+}
+
+#time {
+  display: flex;
+  justify-content: space-between;
+  width: 88%;
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #777;
+  background: #111;
+  padding: 0.6rem;
+}
+
+/* ===== Buttons (Back etc.) ===== */
+button {
+  background: #22c55e;
+  border: none;
+  border-radius: 6px;
+  color: #000;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+button:hover {
+  background: #34d36d;
+}
+
+/* ===== Responsive adjustments ===== */
+@media (max-width: 700px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+  main {
+    padding: 1rem;
+  }
+  .album {
+    width: 90%;
+  }
+  #player-controls button {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1em;
+  }
+  #progress {
+    width: 95%;
+  }
+  #time {
+    width: 95%;
+  }
+  .song {
+    width: 95%;
+    font-size: 0.95rem;
+  }
+}
+
